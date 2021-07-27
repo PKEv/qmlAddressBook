@@ -11,5 +11,11 @@
         <file>qml/ContactsModule/Base/BaseText.qml</file>
         <file>qml/ContactsModule/Impl/ContactsView.qml</file>
         <file>qml/ContactsModule/Impl/ContactDelegate.qml</file>
+        <file>qml/ContactsModule/Base/ImageBubble.qml</file>
+        <file>qml/ContactsModule/Base/RoundImage.qml</file>
+        <file>qml/ResourceProvider/qmldir</file>
+        <file>qml/ResourceProvider/Resorces.qml</file>
+        <file>qml/resources/default-contact-icon.svg</file>
+        <file>qml/resources/phone-book.svg</file>
     </qresource>
 </RCC>

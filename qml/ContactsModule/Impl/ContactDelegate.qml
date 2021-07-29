@@ -9,9 +9,11 @@ BaseListDelegate {
     ImageBubble {
         id: _contactBubble
         anchors.left: root.left
-        width: root.height
-        height: root.height
-        source: Resorces.contacts.defaultContactIcon
+        anchors.leftMargin: Style.defaulOffset
+        anchors.verticalCenter: root.verticalCenter
+        width: root.height - 15
+        height: root.height - 15
+        image.source: Resorces.contacts.defaultContactIcon
     }
     Column {
         anchors.verticalCenter: root.verticalCenter

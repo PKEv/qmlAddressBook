@@ -6,5 +6,7 @@ Item {
     QtObject {
         id: _contacts
         readonly property string defaultContactIcon: "qrc:/qml/resources/default-contact-icon.svg"
+        // readonly property string defaultContactIcon: "qrc:/qml/resources/test.png"
+        // readonly property string defaultContactIcon: "qrc:/qml/resources/test.jpg"
     }
 }

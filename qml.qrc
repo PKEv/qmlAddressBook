@@ -17,5 +17,7 @@
         <file>qml/ResourceProvider/Resorces.qml</file>
         <file>qml/resources/default-contact-icon.svg</file>
         <file>qml/resources/phone-book.svg</file>
+        <file>qml/resources/test.png</file>
+        <file>qml/resources/test.jpg</file>
     </qresource>
 </RCC>

@@ -11,12 +11,18 @@ QtObject {
     readonly property color textColor: isDarkStyle ? "#FFFFFF"
                                                    : "000000"
 
-    readonly property real defaulOffset: 1
+    readonly property color themeInvertedColor: isDarkStyle ? "#FFFFFF"
+                                                            : "000000"
+
+
     readonly property real smallSpacing: 2
 
     readonly property real defaultOpacity : 1
     readonly property real emphasisOpacity : 0.87
     readonly property real secondaryOpacity : 0.6
+
+    readonly property real defaulOffset: 5
+    readonly property real mediumOffset: 10
 
 
 }

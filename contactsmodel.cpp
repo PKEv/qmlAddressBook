@@ -1,7 +1,18 @@
 #include "contactsmodel.h"
+#include <QQmlEngine>
+#include <QDebug>
 
 ContactsModel::ContactsModel()
 {
+    const bool updateResult {updateContacts()};
+    if (!updateResult) {
+        qWarning() << "update contacts faild";
+    }
+}
+
+void ContactsModel::registerMe(const std::string &modulName)
+{
+    qmlRegisterType<ContactsModel>(modulName.c_str(), 1, 0, "ContactsModel");
 
 }
 
@@ -11,7 +22,7 @@ QHash<int, QByteArray> ContactsModel::roleNames() const
 
     roles[ContactRoles::NameRole] = "name";
     roles[ContactRoles::SurnameRole] = "surname";
-    roles[ContactRoles::PhoneNamberRole] = "phone";
+    roles[ContactRoles::PhoneNumberRole] = "phone";
 
     return roles;
 }
@@ -38,7 +49,7 @@ QVariant ContactsModel::data(const QModelIndex &index, int role) const
     case ContactRoles::SurnameRole: {
         return QVariant::fromValue(contact.surname());
     }
-    case ContactRoles::PhoneNamberRole: {
+    case ContactRoles::PhoneNumberRole: {
         return QVariant::fromValue(contact.phone());
     }
     default: {
@@ -46,4 +57,16 @@ QVariant ContactsModel::data(const QModelIndex &index, int role) const
     }
     }
 
+}
+
+bool ContactsModel::updateContacts()
+{
+    bool requestResult{false};
+    std::vector<Contact> constactsResult;
+    std::tie(requestResult, constactsResult) = m_contactsReader.requestContactsBrowse();
+
+    if (requestResult) {
+        m_contacts.swap(constactsResult);
+        emit dataChanged(createIndex(0,0),createIndex(m_contacts.size(),0));
+    }
 }

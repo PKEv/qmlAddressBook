@@ -9,6 +9,7 @@ CONFIG += c++11
 SOURCES += \
         contact.cpp \
         contactsmodel.cpp \
+        contactsreader.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -29,4 +30,5 @@ DISTFILES += \
 
 HEADERS += \
     contact.h \
-    contactsmodel.h
+    contactsmodel.h \
+    contactsreader.h
